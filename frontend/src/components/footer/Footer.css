@@ -1,0 +1,13 @@
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
