@@ -132,118 +132,6 @@ const ParentHero = () => {
             >
                 <div className="absolute inset-0 bg-black bg-opacity-25 z-0"></div>
 
-                {/* Car Service Card */}
-                <div
-                    className={`relative w-72 sm:w-80 md:w-96 h-72 sm:h-80 z-20 cursor-pointer transition-all duration-700 ${isAnimating ? 'opacity-0 translate-y-12' : 'opacity-100 translate-y-0'}`}
-                    style={{ transitionDelay: '300ms' }}
-                    onMouseMove={(e) => calculate3DTransform(e, 'car')}
-                    onMouseLeave={() => resetTransform('car')}
-                    onMouseEnter={() => setHoverCar(true)}
-                    onMouseOut={() => setHoverCar(false)}
-                >
-                    {/* Main card with 3D transform */}
-                    <div
-                        className="absolute inset-0 rounded-2xl shadow-2xl transition-all duration-300 ease-out"
-                        style={{
-                            transform: getTransform('car'),
-                            boxShadow: hoverCar ? '0 20px 50px rgba(0, 100, 0, 0.3)' : '0 10px 30px rgba(0, 0, 0, 0.15)',
-                        }}
-                    >
-                        {/* Card background with animated gradients */}
-                        <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                            {/* Base gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-green-200 via-green-400 to-green-700"></div>
-
-                            {/* Animated rotating gradient overlay */}
-                            <div
-                                className="absolute inset-0 bg-gradient-to-tr from-green-500/40 via-emerald-400/30 to-transparent"
-                                style={{
-                                    transform: `rotate(${rotation}deg)`,
-                                    transformOrigin: 'center center',
-                                }}
-                            ></div>
-
-                            {/* Animated pulse highlight */}
-                            <div
-                                className={`absolute inset-0 bg-gradient-to-t from-white/0 via-green-300/20 to-white/0 transition-opacity duration-1000 ${hoverCar ? 'opacity-60' : 'opacity-0'}`}
-                                style={{
-                                    transformOrigin: 'center center',
-                                    backgroundSize: '200% 200%',
-                                    backgroundPosition: hoverCar ? 'center' : 'bottom',
-                                }}
-                            ></div>
-
-                            {/* Active glow effect on hover */}
-                            <div
-                                className={`absolute inset-0 bg-gradient-to-br from-green-300/50 to-transparent rounded-2xl transition-opacity duration-500 ${hoverCar ? 'opacity-100' : 'opacity-0'}`}
-                            ></div>
-                        </div>
-
-                        {/* Card content */}
-                        <div className="absolute inset-0 rounded-2xl flex flex-col justify-center items-center p-6 sm:p-8">
-                            {/* Floating particles effect */}
-                            <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                                {[...Array(8)].map((_, i) => (
-                                    <div
-                                        key={`car-particle-${i}`}
-                                        className="absolute w-2 h-2 rounded-full bg-white/40"
-                                        style={{
-                                            left: `${Math.random() * 100}%`,
-                                            top: `${Math.random() * 100}%`,
-                                            opacity: 0.3 + Math.random() * 0.4,
-                                            transform: `scale(${0.5 + Math.random()})`,
-                                            animation: `float ${3 + Math.random() * 5}s infinite ease-in-out ${Math.random() * 5}s`
-                                        }}
-                                    ></div>
-                                ))}
-                            </div>
-
-                            {/* Icon with glow effect */}
-                            <div className={`relative mb-4 sm:mb-6 transition-all duration-500 ${hoverCar ? 'scale-110 translate-y-0' : 'scale-100 translate-y-0'}`}>
-                                <div className="absolute inset-0 rounded-full bg-green-300 blur-xl opacity-50 scale-150"></div>
-                                <div className="relative bg-gradient-to-br from-white to-green-100 shadow-lg p-4 sm:p-5 rounded-full">
-                                    <Car size={32} className="text-green-700 sm:w-10 sm:h-10" />
-                                </div>
-
-                                {/* Orbiting element */}
-                                <div
-                                    className="absolute h-6 w-6 rounded-full flex items-center justify-center"
-                                    style={{
-                                        transform: `rotate(${rotation * 2}deg) translateX(50px) sm:translateX(60px)`,
-                                        transformOrigin: 'center center',
-                                    }}
-                                >
-                                    <Settings size={14} className="text-green-200 sm:w-4 sm:h-4" />
-                                </div>
-                            </div>
-
-                            {/* Text content with animation */}
-                            <div className="relative z-10 text-center">
-                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 drop-shadow-md">
-                                    Premium Car Service
-                                </h3>
-
-                                <p className="text-sm sm:text-base text-gray-900 mb-4 sm:mb-5 drop-shadow px-2">
-                                    Professional maintenance and repair for all vehicle models
-                                </p>
-
-                                <a
-                                    href="/carhub"
-                                    className={`inline-flex items-center transition-all border border-x-4 duration-500 bg-white/20 hover:bg-white/30 backdrop-blur-md px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-gray-900 font-medium text-sm sm:text-base ${hoverCar ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-80'}`}
-                                >
-                                    <span className="font-bold">Visit WS Car Service</span>
-                                    <ChevronRight size={14} className="ml-2 sm:w-4 sm:h-4" />
-                                </a>
-                            </div>
-
-                            {/* Decorative elements */}
-                            <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6">
-                                <Zap size={14} className={`text-white/50 transition-all duration-500 sm:w-4 sm:h-4 ${hoverCar ? 'opacity-100 scale-125' : 'opacity-50 scale-100'}`} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Bike Purchase Card */}
                 <div
                     className={`relative w-72 sm:w-80 md:w-96 h-72 sm:h-80 z-20 cursor-pointer transition-all duration-700 ${isAnimating ? 'opacity-0 translate-y-12' : 'opacity-100 translate-y-0'}`}
@@ -313,8 +201,10 @@ const ParentHero = () => {
                             {/* Icon with glow effect */}
                             <div className={`relative mb-4 sm:mb-6 transition-all duration-500 ${hoverBike ? 'scale-110 translate-y-0' : 'scale-100 translate-y-0'}`}>
                                 <div className="absolute inset-0 rounded-full bg-green-300 blur-xl opacity-50 scale-150"></div>
-                                <div className="relative bg-gradient-to-br from-white to-green-100 shadow-lg p-4 sm:p-5 rounded-full">
-                                    <Settings size={32} className="text-green-700 sm:w-10 sm:h-10" />
+                                <div className="relative bg-gradient-to-br from-white to-green-100 shadow-lg p-2 sm:p-2 rounded-full">
+                                    {/* <Settings size={32} className="text-green-700 sm:w-10 sm:h-10" /> */}
+                                    <img className="w-14 h-12 sm:w-16" src="assets/green-bike-logo.png" alt="ev-bike-logo" />
+
                                 </div>
 
                                 {/* Orbiting element */}
@@ -351,6 +241,121 @@ const ParentHero = () => {
                             {/* Decorative elements */}
                             <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6">
                                 <Settings size={14} className={`text-white/50 transition-all duration-500 sm:w-4 sm:h-4 ${hoverBike ? 'opacity-100 scale-125' : 'opacity-50 scale-100'}`} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {/* Car Service Card */}
+
+                <div
+                    className={`relative w-72 sm:w-80 md:w-96 h-72 sm:h-80 z-20 cursor-pointer transition-all duration-700 ${isAnimating ? 'opacity-0 translate-y-12' : 'opacity-100 translate-y-0'}`}
+                    style={{ transitionDelay: '300ms' }}
+                    onMouseMove={(e) => calculate3DTransform(e, 'car')}
+                    onMouseLeave={() => resetTransform('car')}
+                    onMouseEnter={() => setHoverCar(true)}
+                    onMouseOut={() => setHoverCar(false)}
+                >
+                    {/* Main card with 3D transform */}
+                    <div
+                        className="absolute inset-0 rounded-2xl shadow-2xl transition-all duration-300 ease-out"
+                        style={{
+                            transform: getTransform('car'),
+                            boxShadow: hoverCar ? '0 20px 50px rgba(0, 100, 0, 0.3)' : '0 10px 30px rgba(0, 0, 0, 0.15)',
+                        }}
+                    >
+                        {/* Card background with animated gradients */}
+                        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                            {/* Base gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-green-200 via-green-400 to-green-700"></div>
+
+                            {/* Animated rotating gradient overlay */}
+                            <div
+                                className="absolute inset-0 bg-gradient-to-tr from-green-500/40 via-emerald-400/30 to-transparent"
+                                style={{
+                                    transform: `rotate(${rotation}deg)`,
+                                    transformOrigin: 'center center',
+                                }}
+                            ></div>
+
+                            {/* Animated pulse highlight */}
+                            <div
+                                className={`absolute inset-0 bg-gradient-to-t from-white/0 via-green-300/20 to-white/0 transition-opacity duration-1000 ${hoverCar ? 'opacity-60' : 'opacity-0'}`}
+                                style={{
+                                    transformOrigin: 'center center',
+                                    backgroundSize: '200% 200%',
+                                    backgroundPosition: hoverCar ? 'center' : 'bottom',
+                                }}
+                            ></div>
+
+                            {/* Active glow effect on hover */}
+                            <div
+                                className={`absolute inset-0 bg-gradient-to-br from-green-300/50 to-transparent rounded-2xl transition-opacity duration-500 ${hoverCar ? 'opacity-100' : 'opacity-0'}`}
+                            ></div>
+                        </div>
+
+                        {/* Card content */}
+                        <div className="absolute inset-0 rounded-2xl flex flex-col justify-center items-center p-6 sm:p-8">
+                            {/* Floating particles effect */}
+                            <div className="absolute inset-0 overflow-hidden rounded-2xl">
+                                {[...Array(8)].map((_, i) => (
+                                    <div
+                                        key={`car-particle-${i}`}
+                                        className="absolute w-2 h-2 rounded-full bg-white/40"
+                                        style={{
+                                            left: `${Math.random() * 100}%`,
+                                            top: `${Math.random() * 100}%`,
+                                            opacity: 0.3 + Math.random() * 0.4,
+                                            transform: `scale(${0.5 + Math.random()})`,
+                                            animation: `float ${3 + Math.random() * 5}s infinite ease-in-out ${Math.random() * 5}s`
+                                        }}
+                                    ></div>
+                                ))}
+                            </div>
+
+                            {/* Icon with glow effect */}
+                            <div className={`relative mb-4 sm:mb-6 transition-all duration-500 ${hoverCar ? 'scale-110 translate-y-0' : 'scale-100 translate-y-0'}`}>
+                                <div className="absolute inset-0 rounded-full bg-green-300 blur-xl opacity-50 scale-150"></div>
+                                <div className="relative bg-gradient-to-br from-white to-green-100 shadow-lg p-1 sm:p-1 rounded-full">
+                                    {/* <Car size={32} className="text-green-700 sm:w-10 sm:h-10" /> */}
+                                    <img className="w-16 h-14" src="assets/car-logo.png" alt="car-logo" />
+                                </div>
+
+                                {/* Orbiting element */}
+                                <div
+                                    className="absolute h-6 w-6 rounded-full flex items-center justify-center"
+                                    style={{
+                                        transform: `rotate(${rotation * 2}deg) translateX(50px) sm:translateX(60px)`,
+                                        transformOrigin: 'center center',
+                                    }}
+                                >
+                                    <Settings size={14} className="text-green-200 sm:w-4 sm:h-4" />
+                                </div>
+                            </div>
+
+                            {/* Text content with animation */}
+                            <div className="relative z-10 text-center">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 drop-shadow-md">
+                                    Premium Car Service
+                                </h3>
+
+                                <p className="text-sm sm:text-base text-gray-900 mb-4 sm:mb-5 drop-shadow px-2">
+                                    Professional maintenance and repair for all vehicle models
+                                </p>
+
+                                <a
+                                    href="/carhub"
+                                    className={`inline-flex items-center transition-all border border-x-4 duration-500 bg-white/20 hover:bg-white/30 backdrop-blur-md px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-gray-900 font-medium text-sm sm:text-base ${hoverCar ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-80'}`}
+                                >
+                                    <span className="font-bold">Visit WS Car Service</span>
+                                    <ChevronRight size={14} className="ml-2 sm:w-4 sm:h-4" />
+                                </a>
+                            </div>
+
+                            {/* Decorative elements */}
+                            <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6">
+                                <Zap size={14} className={`text-white/50 transition-all duration-500 sm:w-4 sm:h-4 ${hoverCar ? 'opacity-100 scale-125' : 'opacity-50 scale-100'}`} />
                             </div>
                         </div>
                     </div>
@@ -454,7 +459,7 @@ const ParentHero = () => {
                     ))}
                 </div>
 
-                <div  className="relative z-10 max-w-6xl mx-auto px-3 md:px-4 py-8 md:py-12 lg:py-16">
+                <div className="relative z-10 max-w-6xl mx-auto px-3 md:px-4 py-8 md:py-12 lg:py-16">
                     {/* Header Section */}
                     <div className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg">About Us</h2>
@@ -679,7 +684,7 @@ const ParentHero = () => {
                 }
             `}</style>
             </div>
-            
+
 
             <div id="contactSection" className="w-full mx-auto -mt-2 pt-1 bg-green-100">
                 <div className="text-center mb-12 mt-16">
