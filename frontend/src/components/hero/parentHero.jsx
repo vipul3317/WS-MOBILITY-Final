@@ -704,7 +704,7 @@ const ParentHero = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Phone</h4>
-                                    <p className="text-gray-600">9470670833</p>
+                                    <p className="text-gray-600">9117031733</p>
                                 </div>
                             </div>
 
@@ -754,7 +754,7 @@ const ParentHero = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Phone</h4>
-                                    <p className="text-gray-600">9470670833</p>
+                                    <p className="text-gray-600">9117031733</p>
                                 </div>
                             </div>
 
@@ -803,7 +803,7 @@ const ParentHero = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-gray-800">Phone</h4>
-                                    <p className="text-gray-600">9470670833</p>
+                                    <p className="text-gray-600">9117031733</p>
                                 </div>
                             </div>
 
