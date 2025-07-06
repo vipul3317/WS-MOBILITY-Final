@@ -135,7 +135,7 @@ const ParentFooter = () => {
                 <div className="mr-4 bg-gray-800 p-2 rounded-full">
                   <Phone size={18} className="text-green-400" />
                 </div>
-                <p className="text-gray-300">9470670833</p>
+                <p className="text-gray-300">9117031733</p>
               </li>
               <li className="flex items-center">
                 <div className="mr-4 bg-gray-800 p-2 rounded-full">
