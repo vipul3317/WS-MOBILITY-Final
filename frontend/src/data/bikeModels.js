@@ -1,7 +1,7 @@
 export const bikeModels = [
   {
     _id: "667202a7b8e8c123456789a1",
-    name: "WS GTR +",
+    name: "WS GTR ++",
     imageUrl: "bike-models/ev_bike_image-removebg-preview.png",
     specifications: {
       motor: "10' BLDC Hub Motor (Waterproof IP 67)",
