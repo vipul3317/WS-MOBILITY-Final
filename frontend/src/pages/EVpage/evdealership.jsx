@@ -140,9 +140,9 @@ const FileUpload = ({ label, onChange, description, required = false }) => (
 );
 
 const FormSection = ({ icon: Icon, title, children }) => (
-  <div className="bg-gray-50 p-6 rounded-xl">
+  <div className="bg-gray-200 p-6 rounded-xl">
     <div className="flex items-center gap-3 mb-6">
-      <Icon className="w-6 h-6 text-blue-600" />
+      <Icon className="w-6 h-6 text-green-700" />
       <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -258,7 +258,7 @@ const EVDealership= () => {
               <LoadingButton
                 onClick={sendOTP}
                 isLoading={isLoading}
-                className="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-green-700"
+                className="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700"
               >
                 Send OTP <ArrowRight className="w-5 h-5" />
               </LoadingButton>
@@ -277,7 +277,7 @@ const EVDealership= () => {
                 <LoadingButton
                   onClick={verifyOTP}
                   isLoading={isLoading}
-                  className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-3 rounded-xl font-semibold hover:from-green-700 hover:to-blue-700"
+                  className="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700"
                 >
                   Verify OTP <Check className="w-5 h-5" />
                 </LoadingButton>
@@ -294,7 +294,7 @@ const EVDealership= () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 text-center">
-          <div className="w-20 h-20 bg-gradient-to-r from-green-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
             <Check className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-gray-800 mb-4">Application Submitted!</h1>
@@ -311,12 +311,13 @@ const EVDealership= () => {
 
   // Main form
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 py-8 px-4">
+    <div className="min-h-screen bg-green-100 py-28 px-4">
+        <EvNavbar/>
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white p-8">
-            <h1 className="text-4xl font-bold mb-2">EV Bike Dealership Application</h1>
-            <p className="text-blue-100">Join our network of sustainable mobility partners</p>
+          <div className="bg-green-700 text-white p-8">
+            <h1 className="text-4xl text-center font-bold mb-2">EV Bike Dealership Application</h1>
+            <p className="text-blue-100 text-lg text-center">Join our network of sustainable mobility partners</p>
           </div>
 
           <div className="p-8 space-y-8">
@@ -589,7 +590,7 @@ const EVDealership= () => {
             </FormSection>
 
             {/* Declaration */}
-            <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-xl border border-blue-200">
+            <div className="bg-green-50 p-6 rounded-xl border border-blue-200">
               <div className="flex items-start gap-3">
                 <input
                   type="checkbox"
@@ -609,7 +610,7 @@ const EVDealership= () => {
               <LoadingButton
                 onClick={submitApplication}
                 isLoading={isLoading}
-                className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-12 py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-green-700 shadow-lg hover:shadow-xl"
+                className="bg-green-600 text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-green-700 shadow-lg hover:shadow-xl"
               >
                 <Check className="w-6 h-6" />
                 {isLoading ? 'Submitting Application...' : 'Submit Application'}

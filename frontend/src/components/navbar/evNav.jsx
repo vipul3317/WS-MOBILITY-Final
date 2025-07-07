@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const EvNavbar = () => {
      const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,6 +20,12 @@ const EvNavbar = () => {
       link.click();
       document.body.removeChild(link);
     };
+
+    const navigate = useNavigate();
+    const handleApplyClick=()=>{
+        console.log("Clicked");
+        navigate('/evdealership');
+    }
   
     const handleClick = (e, targetId) => {
       e.preventDefault();
@@ -26,6 +33,7 @@ const EvNavbar = () => {
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+       console.log("CLicked", targetId);
     };
     return (
         <nav className="bg-white/95 backdrop-blur-sm shadow-md w-full fixed top-0 left-0 z-50">
@@ -102,7 +110,8 @@ const EvNavbar = () => {
                         >
                             Download Brochure
                         </button>
-                        <button className="w-full mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                        <button className="w-full mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                        onClick={handleApplyClick}>
                             Apply Now
                         </button>
                     </div>
