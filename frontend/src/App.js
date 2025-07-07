@@ -15,6 +15,7 @@ import Coming from './components/comingSoon/coming';
 import UnderProgress from './components/underProgress/underprogress';
 import EVLandingPage from './pages/EVpage/evpage';
 import EvbikePage from './pages/EVpage/evbikePage';
+import EVDealership from './pages/EVpage/evdealership';
 function App() {
   return (
     <Routes>
@@ -38,6 +39,7 @@ function App() {
       />
       <Route path='/evpage' element={<EVLandingPage/>}/>
       <Route path='/evbikemodels' element={<EvbikePage/>}/>
+      <Route path='/evdealership' element={<EVDealership/>}/>
     </Routes>
   );
 }

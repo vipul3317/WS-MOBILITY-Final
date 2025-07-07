@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ParentNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate=useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const handlePartnership=()=>{
+    navigate('/evdealership');
+  }
 
   const navItems = [
     { name: 'Home', targetId: 'home' },
-    { name:'Become a Partner', targetId:'partnership'},
+    { name:'Become a Partner', targetId:'partnership', onClick: handlePartnership},
     { name: 'About Us', targetId: 'aboutwsmobility' },
     { name: 'Contact Us', targetId: 'contactSection' },
   ];
@@ -47,7 +52,10 @@ const ParentNav = () => {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={(e) => handleClick(e, item.targetId)}
+                onClick={(e) => {
+                  handleClick(e, item.targetId);
+                  if(item.onClick) item.onClick();
+                }}
                 className="px-3 py-2 text-gray-700 hover:text-green-700 cursor-pointer rounded-md text-lg font-medium transition-colors duration-300"
               >
                 {item.name}

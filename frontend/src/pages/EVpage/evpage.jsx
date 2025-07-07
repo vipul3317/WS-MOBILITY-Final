@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 const EVLandingPage = () => {
     const navigate = useNavigate();
+    const handleOnClick=()=>{
+        navigate('/evdealership');
+    }
     const handleExploreClick = () => {
         navigate('/evbikemodels');
     }
@@ -365,7 +368,9 @@ const EVLandingPage = () => {
                             Join India's fastest-growing electric vehicle brand. <br/>Exclusive dealership opportunities with attractive margins and comprehensive support.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-                            <button className="px-6 sm:px-8 py-3 text-base sm:text-lg bg-[#2EB82E] text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                            <button
+                            onClick={handleOnClick} 
+                             className="px-6 sm:px-8 py-3 text-base sm:text-lg bg-[#2EB82E] text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
                                 Apply For Dealership
                             </button>
                             <button
