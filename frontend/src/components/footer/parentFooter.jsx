@@ -11,11 +11,11 @@ const ParentFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
     
           <div className="space-y-4">
-            <div className="flex">
+            <div className="flex ">
               <img 
-                src="assets/parentCompanyLogo1.png" 
+                src="assets/wsLogo.png" 
                 alt="WS Mobility Logo" 
-                className="h-24 w-24 object-contain"
+                className="h-24 w-24 object-contain bg-gray-1200"
               />
             </div>
             <p className="text-gray-300 mt-4 text-base">
@@ -141,15 +141,15 @@ const ParentFooter = () => {
                 <div className="mr-4 bg-gray-800 p-2 rounded-full">
                   <Mail size={18} className="text-green-400" />
                 </div>
-                <p className="text-gray-600">info@wsmobility.in</p>
+                <p className="text-gray-300">info@wsmobility.in</p>
               </li>
               <li className="flex items-start">
                 <div className="mr-4 mt-1 bg-gray-800 p-2 rounded-full">
                   <Clock size={18} className="text-green-400" />
                 </div>
                 <div>
-                  <p className="text-gray-300">Sat-Thu: 8AM-6PM</p>
-                  <p className="text-gray-300">Fri: Closed</p>
+                  <p className="text-gray-300 pt-2">Sat-Thu: 8AM-6PM</p>
+                 
                 </div>
               </li>
             </ul>

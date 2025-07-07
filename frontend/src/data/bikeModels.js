@@ -186,7 +186,239 @@ export const bikeModels = [
     available: true,
     featured: false,
     colors: ["Commercial White", "Fleet Blue", "Delivery Green"]
-  }
+  },
+  {
+  _id: "667202a7b8e8c123456789a7",
+  name: "Vipul Singh",
+  imageUrl: "bike-models/sport-edition-image.png",
+  specifications: {
+    motor: "1200W BLDC Hub Motor (Waterproof IP67)",
+    speed: "Not Specified",
+    controller: "Smart Wireless (Waterproof IP64)",
+    range: "70/90 Kms",
+    breakSystem: "F/R: DISC / DRUM",
+    battery: "VRLA: 60V28AH/60V40AH | Li-ion: 60V25Ah/60V30Ah",
+    chargerSpec: "3A/5A/6A/8A",
+    chargingTime: "2-6 Hours"
+  },
+  features: [
+    "Waterproof Throttle",
+    "123 Gear",
+    "Cruise Control",
+    "USB Charging Point",
+    "Side Stand Sensor",
+    "Fast Charging",
+    "Reverse Gear",
+    "Central Locking",
+    "Anti-Theft Alarm",
+    "Keyless Entry"
+  ],
+  category: "Non RTO",
+  available: true,
+  featured: false,
+  colors: ["Black", "Red", "Blue"]
+}
+,{
+  _id: "2",
+  name: "NINJA MINI",
+  imageUrl: "bike-models/ninja-mini.png",
+  specifications: {
+    motor: "10' BLDC Hub Motor (Waterproof IP67)",
+    speed: "Not Specified",
+    controller: "Smart Wireless (Waterproof IP64)",
+    range: "70-110 kms",
+    breakSystem: "F/R: DRUM / DRUM",
+    battery: "VRLA: 48V28Ah / 60V28Ah",
+    chargerSpec: "3A/5A/6A/8A",
+    chargingTime: "3-7 HOURS"
+  },
+  features: [
+    "Waterproof Throttle",
+    "123 Gear Parking",
+    "Cruise Control",
+    "USB Charging Point",
+    "Side Stand Sensor",
+    "Fast Charging",
+    "Reverse Gear",
+    "Central Locking",
+    "Anti-Theft Alarm",
+    "Keyless Entry",
+    "Regenerative Braking",
+    "Tubeless Tyres"
+  ],
+  category: "Non RTO",
+  available: true,
+  featured: false,
+  colors: ["Black", "Grey", "White"]
+},{
+  _id: "3",
+  name: "GTR",
+  imageUrl: "bike-models/gtr.png",
+  specifications: {
+    motor: "10' BLDC Hub Motor (Waterproof IP67)",
+    speed: "45-50 kmph",
+    controller: "Smart Wireless (Waterproof IP64)",
+    range: "70-110 kms",
+    breakSystem: "F/R: DISC / DRUM",
+    battery: "VRLA: 60V28AH/60V40AH | Li-ion: 60V25Ah / 60V30Ah",
+    chargerSpec: "3A/5A/6A/8A",
+    chargingTime: "2-6 HOURS"
+  },
+  features: [
+    "Waterproof Throttle",
+    "123 Gear Parking",
+    "Cruise Control",
+    "USB Charging Point",
+    "Side Stand Sensor",
+    "Fast Charging",
+    "Reverse Gear",
+    "Central Locking",
+    "Anti-Theft Alarm",
+    "Keyless Entry",
+    "Regenerative Braking System",
+    "Tubeless Tyres"
+  ],
+  category: "Non RTO",
+  available: true,
+  featured: false,
+  colors: ["Red", "Silver", "Navy Blue"]
+},{
+  "_id": "667202a7b8e8c123456789b1",
+  "name": "SPIMRI",
+  "imageUrl": "bike-models/spimri.png",
+  "specifications": {
+    "motor": "12' BLDC Hub Motor (Waterproof IP67)",
+    "speed": "55-65 kmph",
+    "controller": "Smart Wireless (Waterproof IP64)",
+    "range": "70-110 km",
+    "breakSystem": "F/R: DISC / DRUM",
+    "battery": "Li-ion TYPE: NMC 72V26AH | 72V32AH",
+    "chargerSpec": "3A / 5A / 6A / 8A",
+    "chargingTime": "4-6 hours"
+  },
+  "features": [
+    "Waterproof Throttle",
+    "123 Gear",
+    "Digital Display",
+    "USB Charging Point",
+    "Side Stand Sensor",
+    "NFC Card Lock",
+    "Reverse Gear",
+    "Central Locking",
+    "Anti Theft Alarm",
+    "Keyless Entry",
+    "Regenerative Braking System",
+    "Tubeless Tyres",
+    "Calling Feature",
+    "Anti-fire Fuse"
+  ],
+  "category": "Commercial",
+  "available": true,
+  "featured": false,
+  "colors": ["Matte Black", "Electric Blue", "Urban Grey"]
+},{
+  "_id": "667202a7b8e8c123456789b2",
+  "name": "E VELCO PRO",
+  "imageUrl": "bike-models/e-velco-pro.png",
+  "specifications": {
+    "motor": "72V, 12' 3000W BLDC Hub Motor (Waterproof IP67)",
+    "speed": "55-65 kmph",
+    "controller": "72V Smart Wireless (Waterproof IP64)",
+    "range": "70-110 km",
+    "breakSystem": "F/R: DISC / DRUM",
+    "battery": "Li-ion TYPE: NMC 72V26AH | 72V32AH",
+    "chargerSpec": "8A",
+    "chargingTime": "4-6 hours"
+  },
+  "features": [
+    "Waterproof Throttle",
+    "123 Gear",
+    "Digital Display",
+    "USB Charging Point",
+    "Side Stand Sensor",
+    "NFC Card Lock",
+    "Reverse Gear",
+    "Central Locking",
+    "Anti Theft Alarm",
+    "Keyless Entry",
+    "Regenerative Braking System",
+    "Tubeless Tyres",
+    "Calling Feature",
+    "Anti-fire Fuse"
+  ],
+  "category": "Commercial",
+  "available": true,
+  "featured": false,
+  "colors": ["White", "Blue", "Red"]
+},{
+  "_id": "667202a7b8e8c123456789b3",
+  "name": "AURA PRO",
+  "imageUrl": "bike-models/aura-pro.png",
+  "specifications": {
+    "motor": "12' BLDC Hub Motor (Waterproof IP67)",
+    "speed": "55-65 kmph",
+    "controller": "Smart Wireless (Waterproof IP64)",
+    "range": "70-110 km",
+    "breakSystem": "F/R: DISC / DRUM",
+    "battery": "Li-ion TYPE: NMC 72V32AH",
+    "chargerSpec": "3A / 5A / 6A / 8A",
+    "chargingTime": "4-6 hours"
+  },
+  "features": [
+    "Waterproof Throttle",
+    "123 Gear",
+    "Digital Display",
+    "USB Charging Point",
+    "Side Stand Sensor",
+    "NFC Card Lock",
+    "Reverse Gear",
+    "Central Locking",
+    "Anti Theft Alarm",
+    "Keyless Entry",
+    "Regenerative Braking System",
+    "Tubeless Tyres",
+    "Calling Feature",
+    "Anti-fire Fuse"
+  ],
+  "category": "Commercial",
+  "available": true,
+  "featured": false,
+  "colors": ["Ice Silver", "Graphite Grey", "Sky Blue"]
+},{
+  "_id": "667202a7b8e8c123456789b4",
+  "name": "SIERRA PRO",
+  "imageUrl": "bike-models/sierra-pro.png",
+  "specifications": {
+    "motor": "12' BLDC Hub Motor (Waterproof IP67)",
+    "speed": "55-65 kmph",
+    "controller": "Smart Wireless (Waterproof IP64)",
+    "range": "70-110 km",
+    "breakSystem": "F/R: DISC / DRUM",
+    "battery": "Li-ion TYPE: NMC 72V32AH",
+    "chargerSpec": "3A / 5A / 6A / 8A",
+    "chargingTime": "4-6 hours"
+  },
+  "features": [
+    "Waterproof Throttle",
+    "123 Gear",
+    "Digital Display",
+    "USB Charging Point",
+    "Side Stand Sensor",
+    "NFC Card Lock",
+    "Reverse Gear",
+    "Central Locking",
+    "Anti Theft Alarm",
+    "Keyless Entry",
+    "Regenerative Braking System",
+    "Tubeless Tyres",
+    "Calling Feature",
+    "Anti-fire Fuse"
+  ],
+  "category": "Commercial",
+  "available": true,
+  "featured": false,
+  "colors": ["Champagne Gold", "Pearl White", "Jet Black"]
+}
 ];
 
 // Helper functions for filtering and sorting
