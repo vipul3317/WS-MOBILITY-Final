@@ -1,46 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, TrendingUp, Target, DollarSign, Award, Megaphone, Headphones, ExternalLink, Factory, Zap, Plus, Shield, Smartphone, Wrench, Leaf, Calculator, MapPin, Phone, Mail, MessageCircle, Star, CheckCircle, ArrowRight, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import EvNavbar from '../../components/navbar/evNav';
+import EVMarket from './evmarket';
+import WhatWeProvide from './whatweprovide';
+import Sendmsg from './sendmsg';
 
 const EVLandingPage = () => {
     const navigate = useNavigate();
-    const handleOnClick=()=>{
+    const handleOnClick = () => {
         navigate('/evdealership');
     }
     const handleExploreClick = () => {
         navigate('/evbikemodels');
     }
     const [activeModel, setActiveModel] = useState(0);
-    const [rangeValue, setRangeValue] = useState(25);
 
     const address = "Engtian Electric Bike Pvt Ltd - Gut No 35, Nk E-Bike, Village -Dhotre Bk, Block - Parner, Ahmednagar, Maharashtra 414304";
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-    const navItems = [
-        { name: 'Models', targetId: 'models' },
-        { name: 'Why Partner', targetId: 'why-partner' },
-        { name: 'Success Stories', targetId: 'success-stories' },
-        { name: 'Apply Now', targetId: 'apply-now' },
-    ];
-
-    const handleClick = (e, targetId) => {
-        e.preventDefault();
-        const section = document.getElementById(targetId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
-
-    const downloadBrochure = () => {
-        const link = document.createElement('a');
-        link.href = 'Brochure Draft 1.pdf';
-        link.download = 'brochure.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
 
     const models = [
         {
@@ -75,36 +52,35 @@ const EVLandingPage = () => {
     const benefits = [
         {
             icon: <TrendingUp className="w-8 h-8" />,
-            title: 'Attractive Profit Margins',
-            description: 'Competitive and dealer-friendly profit margins designed to reward your hard work with consistent profitability. Our high-margin structure allows you to grow your income while maintaining customer satisfaction and building a sustainable business.'
-        },
-        {
-            icon: <Target className="w-8 h-8" />,
-            title: 'Fast-Growing Market',
-            description: 'The EV industry in India is expanding rapidly with millions of customers shifting to electric mobility. As expectations rise toward quality and sustainability, our brand is positioned to capture a significant share of this booming market opportunity.'
+            title: 'Fastest-Growing EV Brand in India',
+            description: 'Partner with India\'s rapidly expanding electric mobility leader. Our strong presence across two-wheeler and three-wheeler segments creates high market demand, ensuring consistent customer interest and sales opportunities for your dealership.'
         },
         {
             icon: <DollarSign className="w-8 h-8" />,
-            title: 'Low Investment, High ROI',
-            description: 'Start your EV dealership with minimal initial investment and experience fast, consistent returns. Our asset-light, profit-heavy business model allows easy scaling while keeping costs controlled. Enjoy high ROI within a short period for smart, sustainable growth.'
-        },
-        {
-            icon: <Award className="w-8 h-8" />,
-            title: 'Strong Brand Trust',
-            description: 'Our brand is recognized and trusted by thousands of customers for reliable service and transparent pricing. Leverage our powerful brand image that brings customers without heavy local marketing. Stand out with a name that earns instant confidence.'
+            title: 'Low Investment, High Returns',
+            description: 'Launch your EV dealership with minimal upfront investment while enjoying industry-best profit margins on every sale. Our optimized business model ensures quick ROI and sustainable profitability from day one.'
         },
         {
             icon: <Megaphone className="w-8 h-8" />,
-            title: 'Complete Marketing Support',
-            description: 'End-to-end marketing backed by proven strategies, online lead generation, and dedicated support team. From Google Ads to WhatsApp promotions, we ensure your outlet stays top-of-mind with customers and drives consistent footfall.'
+            title: 'Proven Marketing & Sales Support',
+            description: 'Eliminate guesswork with our comprehensive marketing ecosystem. From targeted digital campaigns to effective on-ground activations, we provide proven strategies that generate qualified leads and drive conversions consistently.'
+        },
+        {
+            icon: <Award className="w-8 h-8" />,
+            title: 'Strong Brand Recall',
+            description: 'Leverage our established brand recognition and growing customer base to accelerate your sales process. WS Mobility\'s trusted reputation makes customer acquisition faster and easier, reducing your sales cycle significantly.'
+        },
+        {
+            icon: <Target className="w-8 h-8" />,
+            title: '100% Dealer-Centric Model',
+            description: 'Experience true partnership with complete transparency. No hidden charges, no forced inventory, and no unrealistic targets. Our success is directly tied to your growth, ensuring mutual profitability and long-term business sustainability.'
         },
         {
             icon: <Headphones className="w-8 h-8" />,
-            title: 'Expert After-Sales Service',
-            description: 'Comprehensive after-sales support with customer retention tools and service excellence. Our expert team ensures customer satisfaction, leading to repeat business, referrals, and long-term dealership success with ongoing technical assistance.'
+            title: 'Dedicated After-Sales Support',
+            description: 'Ensure customer satisfaction and loyalty with our comprehensive service infrastructure. Complete access to genuine spares, technical support, and service training keeps your customers happy and generates repeat business opportunities.'
         }
     ];
-
     const [testimonials, setTestimonials] = useState([
         {
             id: 1,
@@ -251,14 +227,6 @@ const EVLandingPage = () => {
     const totalSlides = Math.ceil(testimonials.length / itemsPerView);
     const currentSlide = Math.floor(currentIndex / itemsPerView);
 
-    const getRecommendation = (range) => {
-        if (range <= 30) return { model: 'WS Urban Pro', charging: '2 times', savings: '₹3,200' };
-        if (range <= 60) return { model: 'WS Elite', charging: '3 times', savings: '₹4,800' };
-        return { model: 'WS Cargo', charging: '4 times', savings: '₹6,400' };
-    };
-
-    const recommendation = getRecommendation(rangeValue);
-
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveModel((prev) => (prev + 1) % models.length);
@@ -269,79 +237,7 @@ const EVLandingPage = () => {
     return (
         <div className="min-h-screen bg-white">
             {/* Navigation */}
-            <nav className="bg-white/95 backdrop-blur-sm shadow-md w-full fixed top-0 left-0 z-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-20 items-center">
-                        {/* Logo */}
-                        <a href="/" className="flex items-center">
-                            <img
-                                src="assets/parentCompanyLogo1.png"
-                                alt="ws-mob-logo"
-                                style={{ width: 120, height: 110 }}
-                            />
-                        </a>
-
-                        {/* Desktop Nav Links */}
-                        <div className="hidden md:flex items-center space-x-6">
-                            {navItems.map((item) => (
-                                <a
-                                    key={item.name}
-                                    href={`#${item.targetId}`}
-                                    onClick={(e) => handleClick(e, item.targetId)}
-                                    className="text-gray-700 hover:text-green-600 text-lg font-medium transition-colors duration-300"
-                                >
-                                    {item.name}
-                                </a>
-                            ))}
-                        </div>
-
-                        {/* Desktop Buttons */}
-                        <div className="hidden md:flex items-center space-x-4">
-                            <button className="px-4 py-2 text-green-600 border border-green-600 rounded-lg hover:bg-green-50 transition-colors"
-                                onClick={downloadBrochure}>
-                                Download Brochure
-                            </button>
-                            <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-                                Apply Now
-                            </button>
-                        </div>
-
-                        {/* Mobile Menu Button */}
-                        <div className="flex md:hidden items-center">
-                            <button
-                                onClick={toggleMenu}
-                                className="p-2 rounded-md text-gray-700 hover:text-green-600 focus:outline-none"
-                            >
-                                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Mobile Menu */}
-                {isMenuOpen && (
-                    <div className="md:hidden bg-white border-t border-gray-100 shadow-lg rounded-b-lg">
-                        <div className="px-4 py-3 space-y-2">
-                            {navItems.map((item) => (
-                                <a
-                                    key={item.name}
-                                    href={`#${item.targetId}`}
-                                    onClick={(e) => handleClick(e, item.targetId)}
-                                    className="block text-gray-700 hover:text-green-600 text-base font-medium"
-                                >
-                                    {item.name}
-                                </a>
-                            ))}
-                            <button className="w-full mt-2 px-4 py-2 text-green-600 border border-green-600 rounded-lg hover:bg-green-50 transition-colors">
-                                Download Brochure
-                            </button>
-                            <button className="w-full mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-                                Apply Now
-                            </button>
-                        </div>
-                    </div>
-                )}
-            </nav>
+            <EvNavbar />
 
             {/* Hero Section */}
             <section
@@ -365,19 +261,20 @@ const EVLandingPage = () => {
                             <span className="block">Is Here.</span>
                         </h1>
                         <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8 px-4">
-                            Join India's fastest-growing electric vehicle brand. <br/>Exclusive dealership opportunities with attractive margins and comprehensive support.
+                            Join India's fastest-growing electric vehicle brand. <br />Exclusive dealership opportunities with attractive margins and comprehensive support.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
                             <button
-                            onClick={handleOnClick} 
-                             className="px-6 sm:px-8 py-3 text-base sm:text-lg bg-[#2EB82E] text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                                onClick={handleOnClick}
+                                className="px-6 sm:px-8 py-3 text-base sm:text-lg bg-[#2EB82E] text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
                                 Apply For Dealership
                             </button>
                             <button
                                 onClick={handleExploreClick}
-                                className="px-6 sm:px-8 py-3 text-base sm:text-lg border border-green-700 text-green-700 bg-white bg-opacity-90 rounded-lg hover:bg-opacity-100 transition-colors font-semibold"
+                                className=" flex px-6 sm:px-8 py-3 text-base sm:text-lg border border-green-700 text-green-700 bg-white bg-opacity-90 rounded-lg hover:bg-opacity-100 transition-colors font-semibold"
                             >
-                                View Models
+                                <Phone className='mr-2'/>
+                                Schedule a Call
                             </button>
                         </div>
                     </div>
@@ -385,7 +282,7 @@ const EVLandingPage = () => {
             </section>
 
             {/* Product Models */}
-            <section id="models" className="py-16 bg-white">
+            <section id="product-portfolio" className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="md:text-5xl font-bold text-gray-900 mb-4">Our Product Portfolio</h2>
@@ -398,7 +295,7 @@ const EVLandingPage = () => {
                                 style={{ transform: `translateX(-${activeModel * 100}%)` }}>
                                 {models.map((model, index) => (
                                     <div key={index} className="w-full flex-shrink-0">
-                                        <div className="bg-white rounded-2xl shadow-lg overflow-hidden mx-4">
+                                        <div className="bg-gray-100 rounded-2xl shadow-lg overflow-hidden mx-4">
                                             <div className="md:flex">
                                                 <div className="md:w-1/2 p-8">
                                                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{model.name}</h3>
@@ -441,7 +338,7 @@ const EVLandingPage = () => {
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div className="md:w-1/2 bg-gray-100 flex items-center justify-center p-8">
+                                                <div className="md:w-1/2 bg-blue-100 flex items-center justify-center p-8">
                                                     <div className="w-full h-64 bg-gradient-to-br from-green-100 to-blue-100 rounded-lg flex items-center justify-center">
                                                         <span className="text-gray-500">EV Bike Image</span>
                                                     </div>
@@ -454,16 +351,16 @@ const EVLandingPage = () => {
                         </div>
 
                         <button
-                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
+                            className="absolute -left-2 top-1/2 transform -translate-y-1/2 bg-green-100 rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
                             onClick={() => setActiveModel((prev) => (prev - 1 + models.length) % models.length)}
                         >
-                            <ChevronLeft className="w-6 h-6" />
+                            <ChevronLeft className="w-8 h-8" />
                         </button>
                         <button
-                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-100 rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
                             onClick={() => setActiveModel((prev) => (prev + 1) % models.length)}
                         >
-                            <ChevronRight className="w-6 h-6" />
+                            <ChevronRight className="w-8 h-8" />
                         </button>
 
                         <div className="flex justify-center mt-6 space-x-2">
@@ -481,7 +378,7 @@ const EVLandingPage = () => {
             </section>
 
             {/* Explore Models */}
-            <section className="bg-white py-16 pt-6">
+            <section id='models' className="bg-white py-16 pt-6">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 overflow-hidden" style={{ boxShadow: '0 0 50px rgba(0, 0, 0, 0.1), 0 25px 50px rgba(0, 0, 0, 0.15)' }}>
                         <div className="relative overflow-hidden">
@@ -587,54 +484,12 @@ const EVLandingPage = () => {
                 </div>
             </section>
 
-            {/* Range Calculator */}
-            <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-white rounded-2xl shadow-lg p-8">
-                        <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Plan Your Perfect Ride</h3>
-
-                        <div className="mb-6">
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                                Daily Commute Distance: {rangeValue} km
-                            </label>
-                            <input
-                                type="range"
-                                min="0"
-                                max="100"
-                                value={rangeValue}
-                                onChange={(e) => setRangeValue(parseInt(e.target.value))}
-                                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
-                            />
-                            <div className="flex justify-between text-xs text-gray-500 mt-1">
-                                <span>0 km</span>
-                                <span>100 km</span>
-                            </div>
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-6 text-center">
-                            <div className="bg-green-50 rounded-lg p-4">
-                                <h4 className="font-semibold text-gray-900 mb-2">Recommended Model</h4>
-                                <p className="text-green-600 font-bold">{recommendation.model}</p>
-                            </div>
-                            <div className="bg-blue-50 rounded-lg p-4">
-                                <h4 className="font-semibold text-gray-900 mb-2">Weekly Charging</h4>
-                                <p className="text-blue-600 font-bold">{recommendation.charging}</p>
-                            </div>
-                            <div className="bg-purple-50 rounded-lg p-4">
-                                <h4 className="font-semibold text-gray-900 mb-2">Monthly Savings</h4>
-                                <p className="text-purple-600 font-bold">{recommendation.savings}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Benefits */}
-            <section id="why-partner" className="py-16 bg-white">
+            <section id="why-partner" className="py-16 bg-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose WS Mobility?</h2>
-                        <p className="text-gray-600 text-lg max-w-2xl mx-auto">Join our growing network of successful EV dealerships and unlock exceptional business opportunities</p>
+                        <p className="text-gray-600 text-lg max-w-2xl mx-auto font-semibold font-poppins">Join our growing network of successful EV dealerships and unlock exceptional business opportunities</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -657,7 +512,7 @@ const EVLandingPage = () => {
                                     </div>
 
                                     {/* Title with color transition */}
-                                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-white mb-4 transition-colors duration-500">
+                                    <h3 className="text-xl font-poppins font-bold text-gray-900 group-hover:text-white mb-4 transition-colors duration-500">
                                         {benefit.title}
                                     </h3>
 
@@ -680,6 +535,9 @@ const EVLandingPage = () => {
                     </div>
                 </div>
             </section>
+
+            <EVMarket/>
+            <WhatWeProvide/>
             {/* manufacturing */}
             <div className="min-h-screen bg-emerald-100 pt-8 py-16 px-4">
                 <div className="max-w-6xl mx-auto">
@@ -929,14 +787,14 @@ const EVLandingPage = () => {
                                     className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white/90 backdrop-blur rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-green-50 disabled:opacity-50 disabled:cursor-not-allowed border border-green-200/50 hover:border-green-400/50"
                                     disabled={currentSlide === 0}
                                 >
-                                    <ChevronLeft className="w-5 h-5 text-green-600" />
+                                    <ChevronLeft className="w-5 h-5 text-green-800" />
                                 </button>
                                 <button
                                     onClick={nextSlide}
                                     className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white/90 backdrop-blur rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 hover:bg-green-50 disabled:opacity-50 disabled:cursor-not-allowed border border-green-200/50 hover:border-green-400/50"
                                     disabled={currentSlide >= totalSlides - 1}
                                 >
-                                    <ChevronRight className="w-5 h-5 text-green-600" />
+                                    <ChevronRight className="w-5 h-5 text-green-800" />
                                 </button>
                             </>
                         )}
@@ -1086,62 +944,8 @@ const EVLandingPage = () => {
                 )}
             </section>
 
-            {/* Test Ride Form */}
-            <section id='apply-now' className="py-16 bg-green-600">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center text-white mb-8">
-                        <h1 className="text-3xl md:text-4xl font-bold mb-4">Book Your EV Bike Now</h1>
-                        <p className="text-green-100 text-lg">Experience the future of mobility today</p>
-                    </div>
-
-                    <div className="bg-white rounded-2xl p-8">
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                                <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Mobile Number</label>
-                                <input type="tel" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="+91" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                <input type="email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
-                                <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
-                            </div>
-                        </div>
-
-                        <div className="mt-6">
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Select Model</label>
-                            <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                                <option value="">Choose a model</option>
-                                <option value="ninja-plus">NINJA PLUS</option>
-                                <option value="ninja-mini">NINJA MINI</option>
-                                <option value="shravil">SHRAVIL</option>
-                                <option value="hurricane">HURRICANE</option>
-                                <option value="gtr">GTR</option>
-                                <option value="gtr-plus">GTR +++</option>
-                                <option value="spimri">SPIMRI</option>
-                                <option value="e-velco-pro">E VELCO PRO</option>
-                                <option value="aura-pro">AURA PRO</option>
-                                <option value="sierra-pro">SIERRA PRO</option>
-                            </select>
-                        </div>
-
-                        <button className="w-full mt-8 px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold text-lg">
-                            Book Now
-                        </button>
-                        <p className="text-base text-gray-500 text-center mt-2">
-                            We'll send you OTP for verification. Your data is 100% secure.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
             {/* Contact */}
+            <Sendmsg/>
 
         </div>
     )

@@ -1,43 +1,43 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 const EvNavbar = () => {
-     const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-    const navItems = [
-      { name: 'Models', targetId: 'models' },
-      { name: 'Why Partner', targetId: 'why-partner' },
-      { name: 'Success Stories', targetId: 'success-stories' },
-      { name: 'Apply Now', targetId: 'apply-now' },
-    ];
-  
-    const downloadBrochure = () => {
-      const link = document.createElement('a');
-      link.href = 'Brochure Draft 1.pdf';
-      link.download = 'brochure.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const handleScrollToBottom = () => {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth', 
+        });
     };
 
-    const navigate = useNavigate();
-    const handleApplyClick=()=>{
-        console.log("Clicked");
-        navigate('/evdealership');
-    }
-  
+    const navItems = [
+        { name: 'Home', targetId: 'home' },
+        { name: 'Models', targetId: 'models' },
+        { name: 'Why Partner', targetId: 'why-partner' },
+        { name: 'Success Stories', targetId: 'success-stories' },
+    ];
+
+    const downloadBrochure = () => {
+        const link = document.createElement('a');
+        link.href = 'Brochure Draft 1.pdf';
+        link.download = 'brochure.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     const handleClick = (e, targetId) => {
-      e.preventDefault();
-      const section = document.getElementById(targetId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-       console.log("CLicked", targetId);
+        e.preventDefault();
+        const section = document.getElementById(targetId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        console.log("CLicked", targetId);
     };
     return (
         <nav className="bg-white/95 backdrop-blur-sm shadow-md w-full fixed top-0 left-0 z-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-20 items-center">
                     {/* Logo */}
                     <a href="/" className="flex items-center">
@@ -70,8 +70,10 @@ const EvNavbar = () => {
                         >
                             Download Brochure
                         </button>
-                        <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-                            Apply Now
+                        <button
+                        onClick={handleScrollToBottom} 
+                        className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                            Contact Us
                         </button>
                     </div>
 
@@ -111,7 +113,7 @@ const EvNavbar = () => {
                             Download Brochure
                         </button>
                         <button className="w-full mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                        onClick={handleApplyClick}>
+                            onClick={handleScrollToBottom}>
                             Apply Now
                         </button>
                     </div>

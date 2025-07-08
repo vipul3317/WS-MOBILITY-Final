@@ -5,11 +5,11 @@ import ParentFooter from "../../components/footer/parentFooter";
 
 const ParentHome = () =>{
     return(
-        <>
+        <div id="home">
         <ParentNav/>
         <ParentHero/>
         <ParentFooter/>
-        </>
+        </div>
     )
 }
 
