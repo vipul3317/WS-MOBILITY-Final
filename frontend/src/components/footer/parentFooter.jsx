@@ -43,7 +43,7 @@ const ParentFooter = () => {
                 <a href="/carhub" className="flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300">
                   <ChevronRight size={16} className="mr-2 text-green-500" />
                   <span className="flex items-center font-semibold">
-                    <Car size={16} className="mr-2" /> Car Hub Services
+                    <Car size={16} className="mr-2" /> WS Services
                   </span>
                 </a>
               </li>
@@ -60,6 +60,14 @@ const ParentFooter = () => {
                   <ChevronRight size={16} className="mr-2 text-green-500" />
                   <span className="flex items-center font-semibold">
                     <Zap size={16} className="mr-2" /> NK E-Bikes
+                  </span>
+                </a>
+              </li>
+               <li>
+                <a href="https://rapmotors.in/downloads.php" className="flex items-center text-gray-300 hover:text-green-400 transition-colors duration-300">
+                  <ChevronRight size={16} className="mr-2 text-green-500" />
+                  <span className="flex items-center font-semibold">
+                    <Zap size={16} className="mr-2" /> RAP ECO Motors
                   </span>
                 </a>
               </li>
