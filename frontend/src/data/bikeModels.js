@@ -228,13 +228,13 @@ export const bikeModels = [
   imageUrl: "bike-models/ninja-mini.png",
   specifications: {
     motor: "10' BLDC Hub Motor (Waterproof IP67)",
-    speed: "45-55 kmph", // Changed from "Not Specified"
+    speed: "45-55 kmph", 
     controller: "Smart Wireless (Waterproof IP64)",
-    range: "70-110 km", // Changed from "kms"
-    breakSystem: "F/R: DRUM / DRUM", // Or rename to "brakeSystem"
-    battery: "Li-ion TYPE: 48V28Ah (1.3kWh)", // Changed from VRLA
+    range: "70-110 km",
+    breakSystem: "F/R: DRUM / DRUM", 
+    battery: "Li-ion TYPE: 48V28Ah (1.3kWh)", 
     chargerSpec: "3A/5A/6A/8A",
-    chargingTime: "3-7 hours" // Changed from "HOURS"
+    chargingTime: "3-7 hours" 
   },
   features: [
     "Waterproof Throttle",
