@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { Search, Filter, X, ChevronDown, SortAsc, SortDesc, Star, Zap, Gauge, Battery } from 'lucide-react';
 
 const BikeModels = ({ bikes: initialBikes = [] }) => {
-    // State management
+    
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [sortBy, setSortBy] = useState('name');
@@ -16,7 +16,7 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
     const [motorType, setMotorType] = useState('all');
     const [chargingType, setChargingType] = useState('all');
 
-    // Memoized calculations
+    // calculations filtering ke liye
     const { categories, filterOptions } = useMemo(() => {
         const cats = [...new Set(initialBikes.map(bike => bike.category))].filter(Boolean).sort();
         
@@ -77,7 +77,7 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
         });
     }, []);
 
-    // Main filtering and sorting logic
+    // filtering and sorting 
     const filteredAndSortedBikes = useMemo(() => {
         let filtered = searchBikes(initialBikes, searchQuery);
 
@@ -117,7 +117,7 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
         if (featuredOnly) filtered = filtered.filter(bike => bike.featured === true);
         if (availableOnly) filtered = filtered.filter(bike => bike.available === true);
 
-        // Apply sorting
+        // sorting
         filtered.sort((a, b) => {
             let aValue, bValue;
             switch (sortBy) {
@@ -164,7 +164,6 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
 
     const handleClearSearch = useCallback(() => setSearchQuery(''), []);
 
-    // Render components
     const renderFilterSelect = (label, value, onChange, options, allLabel) => (
         <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">{label}</label>
@@ -238,9 +237,7 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Content Section */}
                 <div className="space-y-6">
-                    {/* Specifications */}
                     {bike.specifications && Object.keys(bike.specifications).length > 0 && (
                         <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300">
                             <div className="flex items-center gap-2 mb-4">
@@ -350,9 +347,7 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
     return (
         <section className="min-h-screen bg-gray-200 pt-0">
             <div className="max-w-7xl mx-auto px-4 py-2">
-                {/* Search and Filter Controls */}
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-green-100 mb-12">
-                    {/* Search Bar */}
                     <div className="relative mb-6">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <Search className="h-5 w-5 text-gray-400" />
@@ -375,7 +370,6 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
                         )}
                     </div>
 
-                    {/* Filter Toggle */}
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
                         <button
                             onClick={() => setShowFilters(!showFilters)}
@@ -399,13 +393,12 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
                         </div>
                     </div>
 
-                    {/* Filter Controls */}
+
                     {showFilters && (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg transition-all duration-300">
                             {renderFilterSelect('Category', selectedCategory, setSelectedCategory, categories, 'All Categories')}
                             {renderFilterSelect('Sort By', sortBy, setSortBy, ['name', 'category', 'range', 'speed'], 'Name')}
                             
-                            {/* Sort Order */}
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Order</label>
                                 <button
@@ -423,7 +416,6 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
                             {renderFilterSelect('Motor Type', motorType, setMotorType, filterOptions.motorTypes, 'All Motor Types')}
                             {renderFilterSelect('Charging Type', chargingType, setChargingType, filterOptions.chargingTypes, 'All Charging Types')}
 
-                            {/* Checkboxes */}
                             <div className="col-span-full">
                                 <div className="flex flex-wrap gap-6">
                                     {[
@@ -446,7 +438,6 @@ const BikeModels = ({ bikes: initialBikes = [] }) => {
                     )}
                 </div>
 
-                {/* Bikes Grid */}
                 {filteredAndSortedBikes.length === 0 ? (
                     <div className="text-center py-12">
                         <div className="text-gray-500 text-lg mb-4">No bikes found matching your criteria.</div>

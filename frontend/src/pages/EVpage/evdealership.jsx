@@ -64,7 +64,7 @@ const INITIAL_FORM_DATA = {
   declaration: false
 };
 
-// Reusable components
+// components which will be used furthet
 const InputField = ({ label, type = 'text', value, onChange, placeholder, required = false, ...props }) => (
   <div>
     <label className="block text-sm font-medium text-gray-700 mb-2">

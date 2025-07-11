@@ -232,7 +232,7 @@ const Sendmsg = () => {
                             </div>
 
                             <div className="text-center">
-                                <p className="text-sm text-gray-500">
+                                <p className="text-sm text-white">
                                     🔒 Your information is secure and will be used only to respond to your inquiry
                                 </p>
                             </div>

@@ -54,7 +54,6 @@ const ParentNav = () => {
     <div className="bg-white shadow-md w-full fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex justify-between h-20">
-          {/* Logo and brand name */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img style={{ width: 120, height: 120 }} src='assets/parentCompanyLogo1.png' alt='ws-mob-logo' />
@@ -124,7 +123,7 @@ const ParentNav = () => {
         </div>
       </div>
 
-      {/* Mobile menu, show/hide based on menu state */}
+      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">

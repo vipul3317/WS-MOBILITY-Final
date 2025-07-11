@@ -142,8 +142,6 @@ const EVLandingPage = () => {
     });
     const [itemsPerView, setItemsPerView] = useState(3);
 
-    // Responsive items per view
-    // Responsive items per view
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 640) {
@@ -421,7 +419,6 @@ const EVLandingPage = () => {
 
                             {/* Main Content */}
                             <div className="relative z-10 px-8 py-8 text-center">
-                                {/* Floating Icon */}
                                 <div className="relative inline-block mb-8">
                                     <div className="absolute inset-0 bg-gradient-to-r from-green-200/20 to-emerald-200/20 rounded-3xl blur-xl transform rotate-6"></div>
                                     <div className="relative bg-white/40 backdrop-blur-md border border-green-200/30 rounded-3xl p-6 shadow-lg">
@@ -448,7 +445,7 @@ const EVLandingPage = () => {
                                     From urban commuters to performance riders, explore our full range of cutting-edge electric bikes crafted for the future of mobility.
                                 </p>
 
-                                {/* CTA Button with Unique Design */}
+                                {/* CTA Button */}
                                 <div className="relative inline-block">
                                     <div className="absolute inset-0 bg-gradient-to-r from-green-200/30 to-emerald-200/30 rounded-full blur-lg transform scale-110"></div>
                                     <button
@@ -469,7 +466,7 @@ const EVLandingPage = () => {
                                     </button>
                                 </div>
 
-                                {/* Subtle Badge */}
+                                {/* Badge */}
                                 <div className="mt-8 inline-flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-green-200/30 rounded-full px-6 py-3 shadow-sm">
                                     <div className="flex -space-x-2">
                                         <div className="w-3 h-3 bg-green-400 rounded-full border-2 border-white shadow-sm"></div>
@@ -495,34 +492,24 @@ const EVLandingPage = () => {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {benefits.map((benefit, index) => (
                             <div key={index} className="group relative overflow-hidden bg-gradient-to-br from-emerald-50 via-white to-emerald-100 border-2 border-emerald-200 hover:border-emerald-400 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/20 text-center p-8 rounded-2xl shadow-lg">
-                                {/* Background glow effect */}
                                 <div className="absolute top-0 right-0 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl"></div>
-
-                                {/* Sliding background effect */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-cyan-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out rounded-2xl"></div>
-
-                                {/* Top accent line */}
                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-1 bg-emerald-500 rounded-b-full"></div>
-
-                                {/* Content container */}
                                 <div className="relative z-10 transform group-hover:-translate-y-2 transition-all duration-500">
-                                    {/* Icon with morphing effect */}
+                                    
                                     <div className="inline-flex items-center justify-center w-20 h-20 bg-emerald-100 group-hover:bg-white/20 rounded-2xl mb-6 text-emerald-600 group-hover:text-white shadow-lg group-hover:shadow-2xl group-hover:shadow-emerald-500/30 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                                         {benefit.icon}
                                     </div>
 
-                                    {/* Title with color transition */}
                                     <h3 className="text-xl font-poppins font-bold text-gray-900 group-hover:text-white mb-4 transition-colors duration-500">
                                         {benefit.title}
                                     </h3>
 
-                                    {/* Description with enhanced readability */}
                                     <p className="text-gray-700 group-hover:text-gray-100 leading-relaxed transition-colors duration-500">
                                         {benefit.description}
                                     </p>
                                 </div>
 
-                                {/* Subtle pattern overlay */}
                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500">
                                     <div className="absolute inset-0" style={{
                                         backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 1px, transparent 1px),
@@ -554,12 +541,10 @@ const EVLandingPage = () => {
 
                     {/* Main Content */}
                     <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-                        {/* Hero Image Section */}
                         <div className="relative h-96 bg-gray-200 flex items-center justify-center">
                             <img src='assets/manufacturing.png' className='w-160' />
                         </div>
 
-                        {/* Content Section */}
                         <div className="p-8 lg:p-12">
                             <div className="grid lg:grid-cols-2 gap-12 items-center">
                                 {/* Left Side - Company Info */}
@@ -684,7 +669,6 @@ const EVLandingPage = () => {
 
             {/* Testimonials */}
             <section id='success-stories' className="py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden">
-                {/* Animated Background Elements */}
                 <div className="absolute inset-0 opacity-20">
                     <div className="absolute top-20 left-10 w-32 h-32 bg-green-300 rounded-full blur-xl animate-pulse"></div>
                     <div className="absolute top-40 right-20 w-24 h-24 bg-emerald-300 rounded-full blur-lg animate-bounce delay-1000"></div>
@@ -692,7 +676,6 @@ const EVLandingPage = () => {
                     <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-lime-300 rounded-full blur-lg animate-ping delay-700"></div>
                 </div>
 
-                {/* Grid Pattern Overlay */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -716,7 +699,6 @@ const EVLandingPage = () => {
                         </button>
                     </div>
 
-                    {/* Carousel Container */}
                     <div className="relative">
                         <div className="overflow-hidden pt-8 pb-8 rounded-xl">
                             <div
@@ -732,10 +714,9 @@ const EVLandingPage = () => {
                                                 .slice(slideIndex * itemsPerView, (slideIndex + 1) * itemsPerView)
                                                 .map((testimonial) => (
                                                     <div key={testimonial.id} className="group relative bg-gradient-to-br from-white/90 to-green-50/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl hover:shadow-green-500/25 transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 border border-green-200/50 hover:border-green-400/50 overflow-hidden">
-                                                        {/* Glowing border effect */}
+                                                    
                                                         <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 via-emerald-500/20 to-teal-500/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                                                        {/* Corner accent */}
                                                         <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-400/20 to-transparent rounded-bl-3xl"></div>
 
                                                         <div className="relative z-10">
@@ -765,7 +746,7 @@ const EVLandingPage = () => {
                                                         </div>
                                                     </div>
                                                 ))}
-                                            {/* Fill empty slots if needed */}
+
                                             {Array.from({
                                                 length: Math.max(0, itemsPerView - testimonials.slice(slideIndex * itemsPerView, (slideIndex + 1) * itemsPerView).length)
                                             }).map((_, emptyIndex) => (

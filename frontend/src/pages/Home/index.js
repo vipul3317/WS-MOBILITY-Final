@@ -8,16 +8,10 @@ import Warranty from '../../components/warranty'
 import MajorService from '../../components/hero/index3'
 import Footer from '../../components/footer/Footers'
 
-
-
-
 export const Home = () => {
   return (
     <>
-    
-
       <Header/>
-      
       <Hero/>
       <Hero2/>
       <MajorService/>
@@ -25,7 +19,6 @@ export const Home = () => {
       <Warranty/>
       <FAQ/>
       <Footer/>
-
     </>
   )
 }

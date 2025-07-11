@@ -39,7 +39,7 @@ const EvbikePage = () => {
           </p>
         </div>
 
-        {/* Optional: Filter Section */}
+        {/* Filter Section */}
         <div className="pt-4 pb-4 bg-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap gap-4 justify-center">
@@ -73,8 +73,7 @@ const EvbikePage = () => {
             </div>
           </div>
         </div>
-
-      {/* Pass filtered bikes to BikeModels component */}
+        
       <BikeModels bikes={getFilteredBikes()} />
     </div>
   )

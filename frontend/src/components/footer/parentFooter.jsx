@@ -125,7 +125,6 @@ const ParentFooter = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Contact Info</h3>
             <div className="w-24 h-1 bg-green-500 mb-6"></div>
@@ -164,7 +163,6 @@ const ParentFooter = () => {
           </div>
         </div>
 
-        {/* Newsletter Subscription */}
         <div className="mt-12 pt-8 border-t border-gray-700">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="w-full md:w-1/2 mb-6 md:mb-0">
