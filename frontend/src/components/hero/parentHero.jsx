@@ -222,11 +222,11 @@ const ParentHero = () => {
                             {/* Text content with animation */}
                             <div className="relative z-10 text-center">
                                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 drop-shadow-md">
-                                    Electric Bikes
+                                    EV Dealership
                                 </h3>
 
                                 <p className="text-sm sm:text-base text-gray-900 mb-4 sm:mb-5 drop-shadow px-2">
-                                    Explore our collection of premium electric bikes
+                                    Explore our collection of 2W & 3W electric vehicles
                                 </p>
 
                                 <a
