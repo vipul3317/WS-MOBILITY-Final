@@ -230,7 +230,7 @@ const ParentHero = () => {
                                 </p>
 
                                 <a
-                                    href="/evpage"
+                                    href="/ev-dealership-opportunity"
                                     className={`inline-flex items-center border border-x-4 transition-all duration-500 bg-white/20 hover:bg-white/30 backdrop-blur-md px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-gray-900 font-medium text-sm sm:text-base ${hoverBike ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-80'}`}
                                 >
                                     <span className="font-bold">Visit Our Website</span>
@@ -400,7 +400,7 @@ const ParentHero = () => {
             </div>
 
             {/* aboutwsmobility */}
-            <div id="aboutwsmobility" className="min-h-screen bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 relative overflow-hidden">
+            <div id="aboutwsmobility" className="min-h-screen bg-green-100 relative overflow-hidden">
                 {/* Animated Background Elements */}
                 <div className="absolute inset-0 overflow-hidden">
                     {/* Organic Flowing Shapes - Reduced for mobile */}
@@ -409,63 +409,36 @@ const ParentHero = () => {
                     <div className="absolute bottom-0 left-1/3 w-36 h-36 md:w-54 md:h-54 lg:w-72 lg:h-72 bg-gradient-to-tr from-emerald-400/20 to-green-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }}></div>
 
                     {/* Floating Elements - Smaller on mobile */}
-                    <div className="absolute top-12 md:top-20 left-4 md:left-10 text-green-300 opacity-70" style={{ animation: 'floatUpDown 4s ease-in-out infinite' }}>
-                        <Car size={20} className="md:w-7 md:h-7" />
+                    <div className="absolute top-12 md:top-20 left-4 md:left-10 text-green-900 opacity-70" style={{ animation: 'floatUpDown 4s ease-in-out infinite' }}>
+                        <Car size={20} className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-7 h-7" />
                     </div>
-                    <div className="absolute top-24 md:top-40 right-8 md:right-20 text-emerald-300 opacity-60" style={{ animation: 'floatUpDown 5s ease-in-out infinite', animationDelay: '1s' }}>
-                        <Zap size={18} className="md:w-6 md:h-6" />
+                    <div className="absolute top-24 md:top-40 right-8 md:right-20 text-emerald-800 opacity-60" style={{ animation: 'floatUpDown 5s ease-in-out infinite', animationDelay: '1s' }}>
+                        <Zap size={18} className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-7 h-7" />
                     </div>
-                    <div className="absolute bottom-32 md:bottom-40 left-8 md:left-20 text-teal-300 opacity-50" style={{ animation: 'floatUpDown 6s ease-in-out infinite', animationDelay: '2s' }}>
-                        <Cpu size={24} className="md:w-8 md:h-8" />
+                    <div className="absolute bottom-32 md:bottom-40 left-8 md:left-20 text-teal-800 opacity-50" style={{ animation: 'floatUpDown 6s ease-in-out infinite', animationDelay: '2s' }}>
+                        <Cpu size={24} className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-7 h-7" />
                     </div>
-                    <div className="absolute top-48 md:top-60 right-16 md:right-40 text-green-400 opacity-40" style={{ animation: 'rotateFloat 8s linear infinite' }}>
-                        <Cog size={16} className="md:w-5 md:h-5" />
+                    <div className="absolute top-48 md:top-60 right-16 md:right-40 text-green-800 opacity-40" style={{ animation: 'rotateFloat 8s linear infinite' }}>
+                        <Cog size={16} className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-7 h-7" />
                     </div>
-                    <div className="absolute bottom-48 md:bottom-60 left-1/2 text-emerald-400 opacity-50" style={{ animation: 'rotateFloat 10s linear infinite reverse' }}>
-                        <Cog size={20} className="md:w-6 md:h-6" />
-                    </div>
-
-                    {/* Moving Vehicle Trail - Hidden on mobile */}
-                    <div className="hidden md:block absolute top-1/3 left-0 text-green-200 opacity-30">
-                        <div style={{ animation: 'moveAcross 20s linear infinite' }}>
-                            <div className="flex items-center space-x-3">
-                                <Car size={20} />
-                                <div className="flex space-x-1">
-                                    <div className="w-6 h-0.5 bg-green-300 rounded"></div>
-                                    <div className="w-4 h-0.5 bg-green-300 rounded opacity-70"></div>
-                                    <div className="w-3 h-0.5 bg-green-300 rounded opacity-50"></div>
-                                    <div className="w-2 h-0.5 bg-green-300 rounded opacity-30"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="absolute bottom-48 md:bottom-60 left-1/2 text-emerald-800 opacity-50" style={{ animation: 'rotateFloat 10s linear infinite reverse' }}>
+                        <Cog size={20} className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-7 h-7" />
                     </div>
 
                     {/* Decorative Lines - Reduced opacity on mobile */}
                     <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-green-400/20 md:via-green-400/30 to-transparent opacity-40 md:opacity-60"></div>
                     <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-emerald-400/15 md:via-emerald-400/20 to-transparent opacity-30 md:opacity-40" style={{ animationDelay: '3s' }}></div>
 
-                    {/* Particle Effects - Fewer on mobile */}
-                    {Array.from({ length: window.innerWidth < 768 ? 10 : 20 }).map((_, i) => (
-                        <div
-                            key={i}
-                            className="absolute w-1 h-1 bg-green-300 rounded-full opacity-40"
-                            style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animation: `twinkle ${3 + Math.random() * 4}s ease-in-out infinite`,
-                                animationDelay: `${Math.random() * 5}s`
-                            }}
-                        ></div>
-                    ))}
+                    
                 </div>
 
                 <div className="relative z-10 max-w-6xl mx-auto px-3 md:px-4 py-8 md:py-12 lg:py-16">
                     {/* Header Section */}
                     <div className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg">About Us</h2>
-                        <div className="w-32 md:w-40 lg:w-48 h-1 md:h-1.5 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 mx-auto mb-2 md:mb-3 rounded-full shadow-lg shadow-green-400/50"></div>
-                        <h3 className="text-base md:text-lg lg:text-xl font-semibold text-green-100 mb-2">
-                            Premium Services Since <span className="text-green-300 font-bold">2019</span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-teal-900 mb-3 md:mb-4 drop-shadow-lg">About Us</h2>
+                        <div className="w-32 md:w-40 lg:w-48 h-1 md:h-1.5 bg-teal-800 mx-auto mb-2 md:mb-3 rounded-full shadow-lg shadow-green-400/50"></div>
+                        <h3 className="text-base md:text-lg lg:text-xl font-semibold text-green-800 mb-2">
+                            Premium Services Since <span className="text-green-900 font-bold">2019</span>
                         </h3>
                     </div>
 

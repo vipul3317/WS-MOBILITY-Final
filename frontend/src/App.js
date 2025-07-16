@@ -37,7 +37,7 @@ function App() {
           </Layout>
         }
       />
-      <Route path='/evpage' element={<EVLandingPage/>}/>
+      <Route path='/ev-dealership-opportunity' element={<EVLandingPage/>}/>
       <Route path='/evbikemodels' element={<EvbikePage/>}/>
       <Route path='/evdealership' element={<EVDealership/>}/>
     </Routes>
