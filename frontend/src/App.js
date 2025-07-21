@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Home } from './pages/Home';
 import Login from './pages/Login/login';
 import Signup from './pages/Signup/signup';
-import Renewal from './pages/Service-pages/renewal';
+// import Renewal from './pages/Service-pages/renewal';
 import Service from './pages/Service-pages/car-service';
 import ParentHome from './pages/ParentHome/home';
 import AppointForm from './pages/forms/appointmentForm';
@@ -16,6 +16,7 @@ import UnderProgress from './components/underProgress/underprogress';
 import EVLandingPage from './pages/EVpage/evpage';
 import EvbikePage from './pages/EVpage/evbikePage';
 import EVDealership from './pages/EVpage/evdealership';
+import DealershipContact from './pages/DealershipContact/DealershipContact';
 function App() {
   return (
     <Routes>
@@ -39,8 +40,9 @@ function App() {
       />
       <Route path='/evpage' element={<EVLandingPage/>}/>
       <Route path='/evbikemodels' element={<EvbikePage/>}/>
-      <Route path='/evdealership' element={<EVDealership/>}/>
-    </Routes>
+      <Route path='/evdealershipcontact' element={<DealershipContact/>}/>
+      <Route path='/evdealership' element={<EVDealership/> }   />
+    </Routes> 
   );
 }
 

@@ -8,6 +8,8 @@ app.use(cors({
     origin: process.env.REACT_APP_FRONTEND_URL,
     methods: ['GET', 'POST'],
     credentials: true,
+    optionsSuccessStatus: 200, // For legacy browser support
+    allowedHeaders: ['Content-Type', 'Authorization'],
   }));
 
 app.use(express.json());

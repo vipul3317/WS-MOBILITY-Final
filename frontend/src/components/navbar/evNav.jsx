@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react';
+import { NavLink } from 'react-router';
 
 const EvNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,7 +8,7 @@ const EvNavbar = () => {
     const handleScrollToBottom = () => {
         window.scrollTo({
             top: document.body.scrollHeight,
-            behavior: 'smooth', 
+            behavior: 'smooth',
         });
     };
 
@@ -69,9 +70,11 @@ const EvNavbar = () => {
                             Download Brochure
                         </button>
                         <button
-                        onClick={handleScrollToBottom} 
-                        className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-                            Contact Us
+                            onClick={handleScrollToBottom}
+                            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                            <NavLink to='/evdealershipcontact' >
+                                Contact Us
+                            </NavLink>
                         </button>
                     </div>
 
@@ -97,7 +100,7 @@ const EvNavbar = () => {
                                 href={`#${item.targetId}`}
                                 onClick={(e) => {
                                     handleClick(e, item.targetId);
-                                    setIsMenuOpen(false); 
+                                    setIsMenuOpen(false);
                                 }}
                                 className="block text-gray-700 hover:text-green-600 text-base font-medium"
                             >
