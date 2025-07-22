@@ -1,3 +1,13 @@
-# https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /login/
+Disallow: /user/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /search
+Disallow: /?   # Blocks all query parameters (optional, for clean indexing)
+
+Allow: /
+
+Sitemap: https://wsmobility.in/sitemap.xml
