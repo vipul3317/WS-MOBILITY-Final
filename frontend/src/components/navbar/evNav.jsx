@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 
 const EvNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const navigate=useNavigate();
+    const location=useLocation();
     const handleScrollToBottom = () => {
         window.scrollTo({
             top: document.body.scrollHeight,
@@ -30,11 +32,14 @@ const EvNavbar = () => {
 
     const handleClick = (e, targetId) => {
         e.preventDefault();
-        const section = document.getElementById(targetId);
+        if(location.pathname==='/ev-dealership-opportunity'){
+            const section = document.getElementById(targetId);
         if (section) {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        console.log("CLicked", targetId);
+        } else {
+            navigate(`/ev-dealership-opportunity#${targetId}`);
+        }
     };
     return (
         <nav className="bg-white/95 backdrop-blur-sm shadow-md w-full fixed top-0 left-0 z-50">

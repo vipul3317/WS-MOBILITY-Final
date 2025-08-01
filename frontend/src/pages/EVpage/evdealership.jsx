@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, User, Building, MapPin, DollarSign, Users, FileText, Check, ArrowRight, Upload, Loader2 } from 'lucide-react';
 import EvNavbar from '../../components/navbar/evNav';
+import { useLocation } from 'react-router-dom';
 
 // Configuration and constants
 const FORM_CONFIG = {
@@ -167,6 +168,7 @@ const EVDealership= () => {
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
   const [otp, setOtp] = useState('');
   const [isOtpSent, setIsOtpSent] = useState(false);
+  const location=useLocation();
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));

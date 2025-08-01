@@ -22,7 +22,7 @@ const Hero = ({ isOpen }) => {
   // Countdown logic
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const targetDate = new Date("2025-04-28T23:59:59").getTime(); // Set target date
+      const targetDate = new Date("2025-08-28T23:59:59").getTime(); // Set target date
       const now = new Date().getTime();
       const difference = targetDate - now;
 
