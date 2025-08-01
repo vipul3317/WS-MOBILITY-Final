@@ -11,7 +11,7 @@ const ParentNav = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  const handlePartnership = () => navigate('/evdealership');
+  const handlePartnership = () => navigate('/ev-dealership-opportunity');
 
   const handleClick = (e, targetId) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ const ParentNav = () => {
 
   const navItems = [
     { name: 'Home', targetId: 'home' },
-    { name: 'Become a Partner', targetId: 'partnership', onClick: handlePartnership },
+    { name: 'Become a Partner', targetId: 'partnership', onClick: handlePartnership},
     {
       name: 'Our Partners',
       hasDropdown: true,
