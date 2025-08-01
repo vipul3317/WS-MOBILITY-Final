@@ -5,6 +5,7 @@ import EvNavbar from '../../components/navbar/evNav';
 import EVMarket from './evmarket';
 import WhatWeProvide from './whatweprovide';
 import Sendmsg from './sendmsg';
+import ScrollToTopButton from '../../utils/ScrollToTopButton';
 
 const EVLandingPage = () => {
     const navigate = useNavigate();
@@ -234,6 +235,9 @@ const EVLandingPage = () => {
 
     return (
         <div className="min-h-screen bg-white">
+            {/* back Scroller */}
+            <ScrollToTopButton />
+
             {/* Navigation */}
             <EvNavbar />
 
@@ -271,7 +275,7 @@ const EVLandingPage = () => {
                                 onClick={handleExploreClick}
                                 className=" flex px-6 sm:px-8 py-3 text-base sm:text-lg border border-green-700 text-green-700 bg-white bg-opacity-90 rounded-lg hover:bg-opacity-100 transition-colors font-semibold"
                             >
-                                <Phone className='mr-2'/>
+                                <Phone className='mr-2' />
                                 Schedule a Call
                             </button>
                         </div>
@@ -496,7 +500,7 @@ const EVLandingPage = () => {
                                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-cyan-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out rounded-2xl"></div>
                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-1 bg-emerald-500 rounded-b-full"></div>
                                 <div className="relative z-10 transform group-hover:-translate-y-2 transition-all duration-500">
-                                    
+
                                     <div className="inline-flex items-center justify-center w-20 h-20 bg-emerald-100 group-hover:bg-white/20 rounded-2xl mb-6 text-emerald-600 group-hover:text-white shadow-lg group-hover:shadow-2xl group-hover:shadow-emerald-500/30 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                                         {benefit.icon}
                                     </div>
@@ -523,8 +527,8 @@ const EVLandingPage = () => {
                 </div>
             </section>
 
-            <EVMarket/>
-            <WhatWeProvide/>
+            <EVMarket />
+            <WhatWeProvide />
             {/* manufacturing */}
             <div className="min-h-screen bg-emerald-100 pt-8 py-16 px-4">
                 <div className="max-w-6xl mx-auto">
@@ -714,7 +718,7 @@ const EVLandingPage = () => {
                                                 .slice(slideIndex * itemsPerView, (slideIndex + 1) * itemsPerView)
                                                 .map((testimonial) => (
                                                     <div key={testimonial.id} className="group relative bg-gradient-to-br from-white/90 to-green-50/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl hover:shadow-green-500/25 transition-all duration-500 transform hover:-translate-y-6 hover:scale-105 border border-green-200/50 hover:border-green-400/50 overflow-hidden">
-                                                    
+
                                                         <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 via-emerald-500/20 to-teal-500/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                                                         <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-400/20 to-transparent rounded-bl-3xl"></div>
@@ -926,7 +930,7 @@ const EVLandingPage = () => {
             </section>
 
             {/* Contact */}
-            <Sendmsg/>
+            <Sendmsg />
 
         </div>
     )
