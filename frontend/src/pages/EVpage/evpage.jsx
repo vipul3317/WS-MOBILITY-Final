@@ -5,6 +5,7 @@ import EvNavbar from '../../components/navbar/evNav';
 import EVMarket from './evmarket';
 import WhatWeProvide from './whatweprovide';
 import Sendmsg from './sendmsg';
+import ScrollToTopButton from '../../utils/ScrollToTopButton';
 
 const EVLandingPage = () => {
     const navigate = useNavigate();
@@ -247,6 +248,9 @@ const EVLandingPage = () => {
 
     return (
         <div className="min-h-screen bg-white">
+            {/* back Scroller */}
+            <ScrollToTopButton />
+
             {/* Navigation */}
             <EvNavbar />
 
