@@ -17,10 +17,11 @@ import EVLandingPage from './pages/EVpage/evpage';
 import EvbikePage from './pages/EVpage/evbikePage';
 import EVDealership from './pages/EVpage/evdealership';
 import DealershipContact from './pages/DealershipContact/DealershipContact';
+import ContractServicesPage from './pages/Service-pages/contract-form';
 function App() {
   return (
     <Routes>
-      <Route path="/coming-soon" element={<Coming />} />
+  
       <Route path="/" element={<ParentHome />} />
       <Route
         path="/*"
@@ -33,6 +34,7 @@ function App() {
               <Route path="/carhub/services" element={<Service />} />
               <Route path="/appointment" element={<AppointForm />} />
               <Route path="/carhub/roadside-services" element={<RoadSideAssistance />} />
+              <Route path="/carhub/contract-form" element={<ContractServicesPage/>}/>
               <Route path='/under-progress' element={<UnderProgress/>}/>
             </Routes>
           </Layout>
