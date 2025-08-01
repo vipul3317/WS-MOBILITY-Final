@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 
 const EvNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleScrollToBottom = () => {
         window.scrollTo({
             top: document.body.scrollHeight,
@@ -30,35 +32,43 @@ const EvNavbar = () => {
 
     const handleClick = (e, targetId) => {
         e.preventDefault();
-        const section = document.getElementById(targetId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (targetId === 'home') {
+            navigate('/');
+            return;
         }
-        console.log("CLicked", targetId);
+        if (location.pathname === '/ev-dealership-opportunity') {
+            const section = document.getElementById(targetId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        } else {
+            navigate(`/ev-dealership-opportunity#${targetId}`);
+        }
     };
+
     return (
         <nav className="bg-white/95 backdrop-blur-sm shadow-md w-full fixed top-0 left-0 z-50">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-20 items-center">
-                    <a href="/" className="flex items-center">
+                    <NavLink to="/" className="flex items-center">
                         <img
                             src="assets/parentCompanyLogo1.png"
                             alt="ws-mob-logo"
                             style={{ width: 120, height: 110 }}
                         />
-                    </a>
+                    </NavLink>
 
                     {/* Desktop Nav Links */}
                     <div className="hidden md:flex items-center space-x-6">
                         {navItems.map((item) => (
-                            <a
+                            <NavLink
                                 key={item.name}
                                 href={`#${item.targetId}`}
                                 onClick={(e) => handleClick(e, item.targetId)}
                                 className="text-gray-700 hover:text-green-600 text-lg font-medium transition-colors duration-300"
                             >
                                 {item.name}
-                            </a>
+                            </NavLink>
                         ))}
                     </div>
 

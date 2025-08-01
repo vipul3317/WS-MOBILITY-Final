@@ -7,11 +7,13 @@ import Brand from '../../components/brands'
 import Warranty from '../../components/warranty'
 import MajorService from '../../components/hero/index3'
 import Footer from '../../components/footer/Footers'
+import ScrollToTopButton from '../../utils/ScrollToTopButton'
 
 export const Home = () => {
   return (
     <>
       <Header/>
+      <ScrollToTopButton/>
       <Hero/>
       <Hero2/>
       <MajorService/>
