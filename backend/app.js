@@ -7,7 +7,7 @@ require('dotenv').config();
 
 app.use(cors({
     origin: process.env.REACT_APP_FRONTEND_URL,
-    methods: ['GET', 'POST'],
+    methods: ['GET',' POST'],
     credentials: true,
     optionsSuccessStatus: 200, // For legacy browser support
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -37,5 +37,4 @@ app.use('/api/contract-form', contractRouter);
 
 app.listen(5000,()=>{
     console.log("server is listening on port 5000");
-    
 });
